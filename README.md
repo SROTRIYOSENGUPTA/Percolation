@@ -1,4 +1,4 @@
-So far, we have learned about an abstract data type called Union Find that organizes data into disjoint sets and allow us to: (1) unify two sets, and (2) given an  element of a set it finds the representative of  the set. With that knowledge, together with some clever tricks, we can test if a n-by-n grid percolates.
+An abstract data type called Union Find organizes data into disjoint sets and allow us to: (1) unify two sets, and (2) given an  element of a set it finds the representative of  the set. With that knowledge, together with some clever tricks, we can test if a n-by-n grid percolates. In this project we utilize percolation to achieve this.
 
 Percolation is an abstract model for many physical systems. Given a n-by-n grid of sites, each site is open with probability p, the system percolates if and only if any open site in the top row in the grid is connected to any open site in the bottom row by open sites.
 
@@ -22,18 +22,11 @@ Connect opened site to any adjacent site that is open. An adjacent site is a sit
 Does the system percolate?
 The system percolates if virtual top site is connected to virtual bottom site.
 
-Overview of files
-You are tasked with completing 3 methods under the Percolation class: openSite, openAllSites, and percolationCheck.
 
-Files provided
-StdDraw.java
-Used by Percolation.java to draw the grid.
-StdRandom.java
-Used by Percolation.java to generate random numbers.
-WeightedQuickUnionFind.java
-Used by Percolation.java to store information about which open sites are connected or not.
-Percolation.java
-This is the file you will update and submit. It contains the information for the grid.
+StdDraw.java here is used by Percolation.java to draw the grid.
+StdRandom.java is used by Percolation.java to generate random numbers.
+WeightedQuickUnionFind.java is used by Percolation.java to store information about which open sites are connected or not.
+Percolation.java contains information for the grid.
 Percolation.java
 Instance variables
 boolean[][] grid: boolean 2D array representing the grid. Each (row, col) is a site. (row, col) is true if the site is open, false if the site is closed.
@@ -43,12 +36,12 @@ WeightedQuickUnionFind wquFind: Weighted quick union-find object used to keep tr
 int virtualTop: index of a virtual top in the size and parent arrays in WeightedQuickUnionFind. Connect the virtual top to every open site in the first row of the grid. 
 int virtualBottom: index of a virtual bottom in the size and parent arrays in WeightedQuickUnionFind.
 Methods
-constructor: initializes the object’s instance variables. Do not update.
-openSite(): opens a site at (row, col). If the site is already open, do nothing. You complete this method.
-openAllSites(): opens all sites in the grid.  Starting at the first site at index (0,0) and moving row wise through all the sites, each site is opened with probability p. You complete this method. Use StdRandom.uniform() to generate a random number.
-percolationCheck(): returns true if the system percolates. You complete this method.
+constructor: initializes the object’s instance variables. 
+openSite(): opens a site at (row, col). If the site is already open, it does nothing.
+openAllSites(): opens all sites in the grid.  Starting at the first site at index (0,0) and moving row wise through all the sites, each site is opened with probability p.  Use StdRandom.uniform() here generates a random number.
+percolationCheck(): returns true if the system percolates. 
 displayGrid(): displays the grid. An open site is colored blue, a closed site is colored black.
-main(): for testing only, update freely.
+main(): is used for testing only.
 The following picture depicts the relationship of the grid sites to the size and parent arrays in the WeightedQuickUnionFind object.
 
 The 2D array grid is flattened into a 1D array.
@@ -58,12 +51,5 @@ The virtual top corresponds to the next to last index in size/parent array, the 
 ![image](https://github.com/SROTRIYOSENGUPTA/Percolation/assets/69280834/1e9a8012-f588-4fb8-96f7-04f880703294)
 
 
-Implementation
-You are to complete the methods openSite(), openAllSites(), and percolationCheck() in the Percolation.java file.
-YOU MAY only update the methods openSite(), openAllSites(), and percolationCheck(). 
-YOU MAY call displayGrid() from inside the main method only. 
-DO NOT add any public methods to the percolation class.
-YOU MAY add private methods to the percolation class. 
 
 
-https://ds.cs.rutgers.edu/assignment-percolation/
