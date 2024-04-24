@@ -83,6 +83,8 @@ The virtual top corresponds to the next to last index in size/parent array, the 
 
 ![image](https://github.com/SROTRIYOSENGUPTA/Percolation/assets/69280834/1e9a8012-f588-4fb8-96f7-04f880703294)
 
+https://ds.cs.rutgers.edu/assignment-percolation/
+
 
 
 
