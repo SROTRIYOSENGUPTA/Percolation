@@ -44,8 +44,7 @@ WeightedQuickUnionFind.java is used by Percolation.java to store information abo
 
 Percolation.java contains information for the grid.
 
-Percolation.java
-Instance variables
+Percolation.java: Instance variables - 
 
 boolean[][] grid: boolean 2D array representing the grid. Each (row, col) is a site. (row, col) is true if the site is open, false if the site is closed.
 
@@ -58,17 +57,28 @@ WeightedQuickUnionFind wquFind: Weighted quick union-find object used to keep tr
 int virtualTop: index of a virtual top in the size and parent arrays in WeightedQuickUnionFind. Connect the virtual top to every open site in the first row of the grid. 
 
 int virtualBottom: index of a virtual bottom in the size and parent arrays in WeightedQuickUnionFind.
+
 Methods
 constructor: initializes the object’s instance variables. 
+
 openSite(): opens a site at (row, col). If the site is already open, it does nothing.
-openAllSites(): opens all sites in the grid.  Starting at the first site at index (0,0) and moving row wise through all the sites, each site is opened with probability p.  Use StdRandom.uniform() here generates a random number.
+
+openAllSites(): opens all sites in the grid.  Starting at the first site at index (0,0) and moving row wise through all the sites, each site is opened with probability p. 
+
+StdRandom.uniform() here generates a random number.
+
 percolationCheck(): returns true if the system percolates. 
+
 displayGrid(): displays the grid. An open site is colored blue, a closed site is colored black.
+
 main(): is used for testing only.
+
 The following picture depicts the relationship of the grid sites to the size and parent arrays in the WeightedQuickUnionFind object.
 
 The 2D array grid is flattened into a 1D array.
+
 The 1D array has an additional two sites: the virtual top and bottom sites.
+
 The virtual top corresponds to the next to last index in size/parent array, the virtual bottom corresponds to the last index in the size/parent array.
 
 ![image](https://github.com/SROTRIYOSENGUPTA/Percolation/assets/69280834/1e9a8012-f588-4fb8-96f7-04f880703294)
