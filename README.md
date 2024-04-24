@@ -9,33 +9,54 @@ We model percolation as a dynamic-connectivity problem and use union-find to che
 ![image](https://github.com/SROTRIYOSENGUPTA/Percolation/assets/69280834/6cd65456-85a4-4ac2-ae7e-7b9e7123eaa1)
 
 
-How to model Percolation as a dynamic-connectivity problem?
-Initialize a n-by-n grid of sites, where all sites are closed/blocked.
+How to model Percolation as a dynamic-connectivity problem? 
+Initialize a n-by-n grid of sites, where all sites are closed/blocked. 
+
 Initialize a weighted quick union-find object containing all the sites in the grid plus two additional sites: a virtual top and a virtual bottom.
+
 Open all sites.
+
 Check if the system percolates.
+
 Opening all sites
+
 Starting at the first site (0,0), one row at a time, open each site with probability p.
+
 Open site
+
 If site is closed, open. Otherwise, do nothing.
+
 If opened site is in the first row then connect to virtual top.
+
 If opened site is in the last row then connect to virtual bottom.
+
 Connect opened site to any adjacent site that is open. An adjacent site is a site to the left, right, top, or bottom of the site. (Not diagonals).
 Does the system percolate?
+
 The system percolates if virtual top site is connected to virtual bottom site.
 
 
 StdDraw.java here is used by Percolation.java to draw the grid.
+
 StdRandom.java is used by Percolation.java to generate random numbers.
+
 WeightedQuickUnionFind.java is used by Percolation.java to store information about which open sites are connected or not.
+
 Percolation.java contains information for the grid.
+
 Percolation.java
 Instance variables
+
 boolean[][] grid: boolean 2D array representing the grid. Each (row, col) is a site. (row, col) is true if the site is open, false if the site is closed.
+
 int gridSize: the size of the grid.
+
 int gridSquared: the number of sites in a grid.
+
 WeightedQuickUnionFind wquFind: Weighted quick union-find object used to keep track of all connected/opened sites.
+
 int virtualTop: index of a virtual top in the size and parent arrays in WeightedQuickUnionFind. Connect the virtual top to every open site in the first row of the grid. 
+
 int virtualBottom: index of a virtual bottom in the size and parent arrays in WeightedQuickUnionFind.
 Methods
 constructor: initializes the object’s instance variables. 
