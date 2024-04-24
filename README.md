@@ -1,3 +1,4 @@
+This Percolation Project utilizes Union-Find data type and the 2D array data strucuture
 An abstract data type called Union Find organizes data into disjoint sets and allow us to: (1) unify two sets, and (2) given an  element of a set it finds the representative of  the set. With that knowledge, together with some clever tricks, we can test if a n-by-n grid percolates. In this project we utilize percolation to achieve this.
 
 Percolation is an abstract model for many physical systems. Given a n-by-n grid of sites, each site is open with probability p, the system percolates if and only if any open site in the top row in the grid is connected to any open site in the bottom row by open sites.
